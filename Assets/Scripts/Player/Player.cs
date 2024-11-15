@@ -5,33 +5,50 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _moveSpeed = 7f;
 
+    [SerializeField]
+    private GameInput _gameInput;
+
     private bool _isWalking;
 
     private void Update()
     {
-        Vector2 inputVec = new Vector2(0, 0);
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            inputVec.y = +1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            inputVec.y = -1;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            inputVec.x = -1;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            inputVec.x = +1;
-        }
-
-        inputVec = inputVec.normalized;
+        Vector2 inputVec = _gameInput.GetMovementVectorNormailized();
 
         Vector3 moveDir = new Vector3(inputVec.x, 0f, inputVec.y);
-        transform.position += moveDir * _moveSpeed * Time.deltaTime;
+
+        float moveDistance = _moveSpeed * Time.deltaTime;
+        float playerRadius = .7f;
+        float playerHeight = 2f;
+        bool canMove = !Physics.CapsuleCast(
+            transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance);
+
+        if (!canMove)
+        {
+            Vector3 moveDirX = new Vector3(moveDir.x, 0, 0).normalized;
+            canMove = !Physics.CapsuleCast(
+                transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirX, moveDistance);
+        
+            if (canMove)
+            {
+                moveDir = moveDirX;
+            }
+            else
+            {
+                Vector3 moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
+                canMove = !Physics.CapsuleCast(
+                    transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirZ, moveDistance);
+            
+                if (canMove)
+                {
+                    moveDir = moveDirZ;
+                }
+            }
+        }
+
+        if (canMove)
+        {
+            transform.position += moveDir * _moveSpeed * Time.deltaTime;
+        }
 
         _isWalking = moveDir != Vector3.zero;
 
