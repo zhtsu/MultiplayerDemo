@@ -361,6 +361,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1303481585407875845, guid: 4101a39ba157e8d468c13a98c88f986c, type: 3}
+      propertyPath: _kitchenObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303481585407875845, guid: 4101a39ba157e8d468c13a98c88f986c, type: 3}
+      propertyPath: _kitchenObjectInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: f86dc2f1f631ac24eb90ee94ae05eac9, type: 2}
     - target: {fileID: 2787702355124402595, guid: 4101a39ba157e8d468c13a98c88f986c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.07
@@ -926,6 +934,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1303481585407875845, guid: 4101a39ba157e8d468c13a98c88f986c, type: 3}
+      propertyPath: _kitchenObject
+      value: 
+      objectReference: {fileID: 8263519789527832949, guid: 0cb5eeb85d21e2146a9abc4f4486e6dc, type: 3}
+    - target: {fileID: 1303481585407875845, guid: 4101a39ba157e8d468c13a98c88f986c, type: 3}
+      propertyPath: _kitchenObjectInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: aa6f2ee7b16b8d14fb09c7d4935d8a4e, type: 2}
     - target: {fileID: 2787702355124402595, guid: 4101a39ba157e8d468c13a98c88f986c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.22
