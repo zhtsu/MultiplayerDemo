@@ -17,6 +17,13 @@ public class ClearCounter : MonoBehaviour, IKitchenObjectParent
             GameObject gameObject = Instantiate(_kitchenObjectInfo.prefab, _kitchenObjectFollowPoint.transform);
             gameObject.GetComponent<KitchenObject>().SetKitchenObjectParent(this);
         }
+        else
+        {
+            if (player.HasKitchenObject() == false)
+            {
+                _kitchenObject.SetKitchenObjectParent(player);
+            }
+        }
     }
 
     public GameObject GetKitchenObjectFollowPoint()
