@@ -236,6 +236,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 347435756732909515, guid: edcfd50aa80c1dc4abfd9362d5648288, type: 3}
+      propertyPath: _cutKitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: abb848ec06e1de740be19097e79e932d, type: 2}
     - target: {fileID: 6216890291221826598, guid: edcfd50aa80c1dc4abfd9362d5648288, type: 3}
       propertyPath: m_Name
       value: CuttingCounter
@@ -925,6 +929,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4647044241639159253, guid: 48f1017fe133ddf48896e6ffb6bfcab8, type: 3}
+      propertyPath: _kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: c179253c96cfe58419cc3833da35e6a9, type: 2}
     - target: {fileID: 6216890291221826598, guid: 48f1017fe133ddf48896e6ffb6bfcab8, type: 3}
       propertyPath: m_Name
       value: ContainerCounter_RawMeatPatty
@@ -982,6 +990,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4647044241639159253, guid: 58faf23126a568542a44886c9e6b2612, type: 3}
+      propertyPath: _kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: aa6f2ee7b16b8d14fb09c7d4935d8a4e, type: 2}
     - target: {fileID: 6216890291221826598, guid: 58faf23126a568542a44886c9e6b2612, type: 3}
       propertyPath: m_Name
       value: ContainerCounter_Tomato
@@ -1104,6 +1116,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4647044241639159253, guid: 7a8334a669138864c943dcf9825759a3, type: 3}
+      propertyPath: _kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 279599100d7558b478ecdaa556e79928, type: 2}
     - target: {fileID: 6216890291221826598, guid: 7a8334a669138864c943dcf9825759a3, type: 3}
       propertyPath: m_Name
       value: ContainerCounter_Bread
@@ -1257,6 +1273,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4647044241639159253, guid: 523ff3e17955a574898e094d54430dba, type: 3}
+      propertyPath: _kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 926c9e28028dbc040ab2b60267f7d4dd, type: 2}
     - target: {fileID: 6216890291221826598, guid: 523ff3e17955a574898e094d54430dba, type: 3}
       propertyPath: m_Name
       value: ContainerCounter_Cabbage
@@ -1444,6 +1464,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4647044241639159253, guid: caf7bba6b1b0ef14b9ecf14b71183383, type: 3}
+      propertyPath: _kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: f86dc2f1f631ac24eb90ee94ae05eac9, type: 2}
     - target: {fileID: 6216890291221826598, guid: caf7bba6b1b0ef14b9ecf14b71183383, type: 3}
       propertyPath: m_Name
       value: ContainerCounter_CheeseBlock

@@ -3,7 +3,7 @@ using UnityEngine;
 public class ClearCounter : BaseCounter
 {
     [SerializeField]
-    private KitchenObjectInfo _kitchenObjectInfo;
+    private KitchenObjectSO _kitchenObjectSO;
 
     public override void Interact(Player player)
     {

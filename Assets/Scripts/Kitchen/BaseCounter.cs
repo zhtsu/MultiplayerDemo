@@ -9,7 +9,12 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
 
     public virtual void Interact(Player player)
     {
+        Debug.Log("Default Interact!");
+    }
 
+    public virtual void InteractAlternate(Player player)
+    {
+        Debug.Log("Default InteractAlternate!");
     }
 
     public GameObject GetKitchenObjectFollowPoint()

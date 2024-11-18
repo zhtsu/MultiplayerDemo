@@ -7,7 +7,7 @@ public class ContainerCounter : BaseCounter
     public event EventHandler OnPlayerGrabbedObject;
 
     [SerializeField]
-    private KitchenObjectInfo _kitchenObjectInfo;
+    private KitchenObjectSO _kitchenObjectSO;
 
     public override void Interact(Player player)
     {
@@ -15,8 +15,7 @@ public class ContainerCounter : BaseCounter
         {
             if (player.HasKitchenObject() == false)
             {
-                GameObject gameObject = Instantiate(_kitchenObjectInfo.prefab);
-                gameObject.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
+                KitchenObject.SpawnKitchenObject(_kitchenObjectSO, player);
                 OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
             }
         }
