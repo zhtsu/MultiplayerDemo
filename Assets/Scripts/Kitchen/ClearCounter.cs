@@ -1,53 +1,33 @@
 using UnityEngine;
 
-public class ClearCounter : MonoBehaviour, IKitchenObjectParent
+public class ClearCounter : BaseCounter
 {
     [SerializeField]
     private KitchenObjectInfo _kitchenObjectInfo;
 
-    [SerializeField]
-    private GameObject _kitchenObjectFollowPoint;
-
-    private KitchenObject _kitchenObject;
-
-    public void Interact(Player player)
+    public override void Interact(Player player)
     {
-        if (_kitchenObject == null)
+        if (HasKitchenObject())
         {
-            GameObject gameObject = Instantiate(_kitchenObjectInfo.prefab, _kitchenObjectFollowPoint.transform);
-            gameObject.GetComponent<KitchenObject>().SetKitchenObjectParent(this);
+            if (player.HasKitchenObject())
+            {
+
+            }
+            else
+            {
+                GetKitchenObject().SetKitchenObjectParent(player);
+            }
         }
         else
         {
-            if (player.HasKitchenObject() == false)
+            if (player.HasKitchenObject())
             {
-                _kitchenObject.SetKitchenObjectParent(player);
+                player.GetKitchenObject().SetKitchenObjectParent(this);
+            }
+            else
+            {
+
             }
         }
-    }
-
-    public GameObject GetKitchenObjectFollowPoint()
-    {
-        return _kitchenObjectFollowPoint;
-    }
-
-    public void SetKitchenObject(KitchenObject kitchenObject)
-    {
-        _kitchenObject = kitchenObject;
-    }
-
-    public KitchenObject GetKitchenObject()
-    {
-        return _kitchenObject;
-    }
-
-    public void ClearKitchenObject()
-    {
-        _kitchenObject = null;
-    }
-
-    public bool HasKitchenObject()
-    {
-        return _kitchenObject != null;
     }
 }
