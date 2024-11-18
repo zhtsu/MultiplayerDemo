@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b578d5aa8e40c748a4c04e2b57d2103, type: 3}
   m_Name: RawMeatPatty
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8263519789527832949, guid: 0cb5eeb85d21e2146a9abc4f4486e6dc, type: 3}
+  prefab: {fileID: 8263519789527832949, guid: f608871710c9219439d56d94c73d3024, type: 3}
   sprite: {fileID: 21300000, guid: aa1bacc24dde76e47b2ec0dd4e82385b, type: 3}
   objectName: "\u751F\u8089\u997C"
