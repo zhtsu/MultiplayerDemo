@@ -5,6 +5,8 @@ public class CuttingCounter : BaseCounter
     [SerializeField]
     private CuttingRecipeSO[] _cuttingRecipeSOArray;
 
+    private int _cuttingProgress;
+
     public override void Interact(Player player)
     {
         if (HasKitchenObject())
@@ -25,6 +27,7 @@ public class CuttingCounter : BaseCounter
                 if (HasRecipeWithInput(player.GetKitchenObject().GetSO()))
                 {
                     player.GetKitchenObject().SetKitchenObjectParent(this);
+                    _cuttingProgress = 0;
                 }
             }
             else
@@ -38,31 +41,34 @@ public class CuttingCounter : BaseCounter
     {
         if (HasKitchenObject() && HasRecipeWithInput(GetKitchenObject().GetSO()))
         {
+            _cuttingProgress++;
             KitchenObjectSO output = GetOutputForInput(GetKitchenObject().GetSO());
-            GetKitchenObject().DestroySelf();
-            KitchenObject.SpawnKitchenObject(output, this);
+            if (_cuttingProgress >= GetCuttingRecipeSOWithInput(GetKitchenObject().GetSO()).cuttingProgressMax)
+            {
+                GetKitchenObject().DestroySelf();
+                KitchenObject.SpawnKitchenObject(output, this);
+            }
         }
     }
 
     private bool HasRecipeWithInput(KitchenObjectSO input)
     {
-        foreach (CuttingRecipeSO recipeSO in _cuttingRecipeSOArray)
-        {
-            if (recipeSO.input == input)
-            {
-                return true;
-            }
-        }
-        return false;
+        return GetCuttingRecipeSOWithInput(input) != null;
     }
 
     private KitchenObjectSO GetOutputForInput(KitchenObjectSO input)
+    {
+        CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(input);
+        return cuttingRecipeSO != null ? cuttingRecipeSO.output : null;
+    }
+
+    private CuttingRecipeSO GetCuttingRecipeSOWithInput(KitchenObjectSO input)
     {
         foreach (CuttingRecipeSO recipeSO in _cuttingRecipeSOArray)
         {
             if (recipeSO.input == input)
             {
-                return recipeSO.output;
+                return recipeSO;
             }
         }
         return null;
