@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b578d5aa8e40c748a4c04e2b57d2103, type: 3}
-  m_Name: CabbageSlicesSO
+  m_Name: CheeseBlock
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8263519789527832949, guid: 360305a2aeb4db642befe49512b55b10, type: 3}
-  sprite: {fileID: 21300000, guid: bee24f07c57157e45a946eed3bfe8b84, type: 3}
-  objectName: "\u5377\u5FC3\u83DC\u7247"
+  Prefab: {fileID: 5694808289575521414, guid: ccb7b54ac943c424cb7a62375dfc4929, type: 3}
+  Sprite: {fileID: 21300000, guid: da2d04fe27b94e34ea0b624569b48a6f, type: 3}
+  ObjectName: "\u5976\u916A"

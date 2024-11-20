@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _kitchenObjectFollowPoint: {fileID: 5229493101920946333}
-  _kitchenObjectInfo: {fileID: 11400000, guid: 279599100d7558b478ecdaa556e79928, type: 2}
+  _kitchenObjectSO: {fileID: 11400000, guid: 279599100d7558b478ecdaa556e79928, type: 2}
 --- !u!4 &8970780823468186712 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2787702355124402595, guid: 36386c00f50cf414a885ae1e8c8d3786, type: 3}

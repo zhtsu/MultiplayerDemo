@@ -1,9 +1,9 @@
 using UnityEngine;
 
 [CreateAssetMenu()]
-public class CuttingRecipeSO : ScriptableObject
+public class FryingRecipeSO : ScriptableObject
 {
     public KitchenObjectSO Input;
     public KitchenObjectSO Output;
-    public int CuttingProgressMax;
+    public float FryingTimerMax;
 }

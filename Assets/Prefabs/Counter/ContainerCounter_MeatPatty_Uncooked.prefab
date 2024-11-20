@@ -97,7 +97,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 907371887537596893, guid: 36386c00f50cf414a885ae1e8c8d3786, type: 3}
       propertyPath: m_Name
-      value: ContainerCounter_RawMeatPatty
+      value: ContainerCounter_MeatPatty_Uncooked
       objectReference: {fileID: 0}
     - target: {fileID: 2787702355124402595, guid: 36386c00f50cf414a885ae1e8c8d3786, type: 3}
       propertyPath: m_LocalPosition.x
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _kitchenObjectFollowPoint: {fileID: 5229493101920946333}
-  _kitchenObjectInfo: {fileID: 11400000, guid: c179253c96cfe58419cc3833da35e6a9, type: 2}
+  _kitchenObjectSO: {fileID: 11400000, guid: c179253c96cfe58419cc3833da35e6a9, type: 2}
 --- !u!4 &8970780823468186712 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2787702355124402595, guid: 36386c00f50cf414a885ae1e8c8d3786, type: 3}

@@ -42,7 +42,7 @@ public class CuttingCounter : BaseCounter
                     CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetSO());
                     OnProgressChanged?.Invoke(this, new OnProgressChangedEventArgs
                     {
-                        ProgressNormalized = (float)_cuttingProgress / (float)cuttingRecipeSO.cuttingProgressMax
+                        ProgressNormalized = (float)_cuttingProgress / (float)cuttingRecipeSO.CuttingProgressMax
                     });
                 }
             }
@@ -64,11 +64,11 @@ public class CuttingCounter : BaseCounter
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetSO());
             OnProgressChanged?.Invoke(this, new OnProgressChangedEventArgs
             {
-                ProgressNormalized = (float)_cuttingProgress / (float)cuttingRecipeSO.cuttingProgressMax
+                ProgressNormalized = (float)_cuttingProgress / (float)cuttingRecipeSO.CuttingProgressMax
             });
 
             KitchenObjectSO output = GetOutputForInput(GetKitchenObject().GetSO());
-            if (_cuttingProgress >= GetCuttingRecipeSOWithInput(GetKitchenObject().GetSO()).cuttingProgressMax)
+            if (_cuttingProgress >= GetCuttingRecipeSOWithInput(GetKitchenObject().GetSO()).CuttingProgressMax)
             {
                 GetKitchenObject().DestroySelf();
                 KitchenObject.SpawnKitchenObject(output, this);
@@ -84,14 +84,14 @@ public class CuttingCounter : BaseCounter
     private KitchenObjectSO GetOutputForInput(KitchenObjectSO input)
     {
         CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(input);
-        return cuttingRecipeSO != null ? cuttingRecipeSO.output : null;
+        return cuttingRecipeSO != null ? cuttingRecipeSO.Output : null;
     }
 
     private CuttingRecipeSO GetCuttingRecipeSOWithInput(KitchenObjectSO input)
     {
         foreach (CuttingRecipeSO recipeSO in _cuttingRecipeSOArray)
         {
-            if (recipeSO.input == input)
+            if (recipeSO.Input == input)
             {
                 return recipeSO;
             }

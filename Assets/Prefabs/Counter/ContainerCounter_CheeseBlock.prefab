@@ -93,7 +93,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 907371887537596893, guid: 36386c00f50cf414a885ae1e8c8d3786, type: 3}
       propertyPath: m_Name
-      value: ContainerCounter
+      value: ContainerCounter_CheeseBlock
       objectReference: {fileID: 0}
     - target: {fileID: 2787702355124402595, guid: 36386c00f50cf414a885ae1e8c8d3786, type: 3}
       propertyPath: m_LocalPosition.x
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _kitchenObjectFollowPoint: {fileID: 5229493101920946333}
-  _kitchenObjectInfo: {fileID: 11400000, guid: f86dc2f1f631ac24eb90ee94ae05eac9, type: 2}
+  _kitchenObjectSO: {fileID: 11400000, guid: f86dc2f1f631ac24eb90ee94ae05eac9, type: 2}
 --- !u!4 &8970780823468186712 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2787702355124402595, guid: 36386c00f50cf414a885ae1e8c8d3786, type: 3}

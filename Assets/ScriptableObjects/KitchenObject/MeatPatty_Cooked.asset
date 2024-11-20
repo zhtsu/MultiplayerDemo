@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b578d5aa8e40c748a4c04e2b57d2103, type: 3}
-  m_Name: BreadSO
+  m_Name: MeatPatty_Cooked
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8263519789527832949, guid: 8cc083fbe3aa55641917d37f624f9a8a, type: 3}
-  sprite: {fileID: 21300000, guid: 77b28124b8bda494381c80bd5aa42c22, type: 3}
-  objectName: "\u9762\u5305\u7247"
+  Prefab: {fileID: 8263519789527832949, guid: 8c485132367d83c4496819e900ae4d89, type: 3}
+  Sprite: {fileID: 21300000, guid: f1f50c7ef90b19741b26f2040806cf56, type: 3}
+  ObjectName: "\u719F\u8089\u997C"
