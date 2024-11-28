@@ -4,6 +4,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public event EventHandler OnStateChanged;
+    public event EventHandler OnGamePaused;
+    public event EventHandler OnGameUnpaused;
 
     public static GameManager Instance { get; private set; }
 
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
     }
 
     private State _state = State.WaitingToStart;
+    private bool _isGamePaused = false;
 
     [SerializeField]
     private float _waitingToStartTimer = 1f;
@@ -91,5 +94,20 @@ public class GameManager : MonoBehaviour
     public float GetGamePlayingTimerNormalized()
     {
         return 1 - (_gamePlayingTimer / _gamePlayingTimerMax);
+    }
+
+    public void TogglePauseGame()
+    {
+        _isGamePaused = !_isGamePaused;
+        if (_isGamePaused)
+        {
+            Time.timeScale = 0f;
+            OnGamePaused?.Invoke(this, EventArgs.Empty);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            OnGameUnpaused?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
