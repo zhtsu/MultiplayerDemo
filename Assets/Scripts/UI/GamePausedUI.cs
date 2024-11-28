@@ -5,19 +5,29 @@ using UnityEngine.UI;
 public class GamePausedUI : MonoBehaviour
 {
     [SerializeField]
-    private Button ResumeButton;
+    private Button _resumeButton;
 
     [SerializeField]
-    private Button MainMenuButton;
+    private Button _mainMenuButton;
+
+    [SerializeField]
+    private Button _optionsButton;
 
     private void Awake()
     {
-        ResumeButton.onClick.AddListener(() => {
+        _resumeButton.onClick.AddListener(() =>
+        {
             GameManager.Instance.TogglePauseGame();
         });
 
-        MainMenuButton.onClick.AddListener(() => {
+        _mainMenuButton.onClick.AddListener(() =>
+        {
             Loader.Load(Loader.Scene.MainMenu);
+        });
+
+        _optionsButton.onClick.AddListener(() =>
+        {
+            OptionsUI.Instance.Show();
         });
     }
 
