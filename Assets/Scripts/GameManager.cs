@@ -21,9 +21,6 @@ public class GameManager : MonoBehaviour
     private bool _isGamePaused = false;
 
     [SerializeField]
-    private float _waitingToStartTimer = 1f;
-
-    [SerializeField]
     private float _countdownToStartTimer = 3f;
 
     [SerializeField]
@@ -37,17 +34,25 @@ public class GameManager : MonoBehaviour
         _gamePlayingTimer = _gamePlayingTimerMax;
     }
 
+    private void Start()
+    {
+        GameInput.Instance.OnInteractAction += GameInput_OnInteractAction;
+    }
+
+    private void GameInput_OnInteractAction(object sender, EventArgs e)
+    {
+        if (_state == State.WaitingToStart)
+        {
+            _state = State.CountdownToStart;
+            OnStateChanged?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
     private void Update()
     {
         switch (_state)
         {
             case State.WaitingToStart:
-                _waitingToStartTimer -= Time.deltaTime;
-                if (_waitingToStartTimer < 0f)
-                {
-                    _state = State.CountdownToStart;
-                    OnStateChanged?.Invoke(this, EventArgs.Empty);
-                }
                 break;
             case State.CountdownToStart:
                 _countdownToStartTimer -= Time.deltaTime;

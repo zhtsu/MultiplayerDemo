@@ -76,6 +76,16 @@ public class SoundManager : MonoBehaviour
         PlaySound(_audioClipRefsSO.Footstep, position, volume);
     }
 
+    public void PlayCountdownSound()
+    {
+        PlaySound(_audioClipRefsSO.Warning, Vector3.zero);
+    }
+
+    public void PlayWarningSound(Vector3 position)
+    {
+        PlaySound(_audioClipRefsSO.Warning, position);
+    }
+
     public float GetVolume()
     {
         return _volume;
