@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -66,6 +67,8 @@ public class OptionsUI : MonoBehaviour
     [SerializeField]
     private GameObject _pressToRebingKeyUI;
 
+    private Action _onClosedAction;
+
     private void Awake()
     {
         Instance = this;
@@ -82,6 +85,7 @@ public class OptionsUI : MonoBehaviour
 
         _closeButton.onClick.AddListener(() => {
             Hide();
+            _onClosedAction();
         });
 
         _moveUpButton.onClick.AddListener(() => { RebindBinding(GameInput.Binding.Move_Up); });
@@ -108,9 +112,10 @@ public class OptionsUI : MonoBehaviour
         Hide();
     }
 
-    public void Show()
+    public void Show(Action onClosedAction)
     {
         gameObject.SetActive(true);
+        _onClosedAction = onClosedAction;
     }
 
     private void Hide()

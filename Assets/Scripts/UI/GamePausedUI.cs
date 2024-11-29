@@ -27,7 +27,8 @@ public class GamePausedUI : MonoBehaviour
 
         _optionsButton.onClick.AddListener(() =>
         {
-            OptionsUI.Instance.Show();
+            Hide();
+            OptionsUI.Instance.Show(Show);
         });
     }
 
