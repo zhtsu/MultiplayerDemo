@@ -37,6 +37,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GameInput.Instance.OnInteractAction += GameInput_OnInteractAction;
+
+        // For debug
+        _state = State.CountdownToStart;
+        OnStateChanged?.Invoke(this, EventArgs.Empty);
     }
 
     private void GameInput_OnInteractAction(object sender, EventArgs e)
